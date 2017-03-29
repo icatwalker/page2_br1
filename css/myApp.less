@@ -3,8 +3,19 @@
   font-weight: bold;
 }
 #pullrefresh{
- @border_color:#fff;
-
+ @border_color:#000;
+  .table{
+    a{
+      box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+      background: #fff;
+      td{
+        background: #fff;
+      }
+    }
+    .mui-collapse-content{
+      background: #eee;
+    }
+  }
   .mui-table-view-cell{
     padding:5px 0;
   }
@@ -32,7 +43,7 @@
       border:1px solid @border_color;
       background: @th_background;
     }
-    @td_background:#E7EFEE;
+    @td_background:#fff;
     td{
       font-size: 12px;
       border:1px solid @border_color;
@@ -65,9 +76,30 @@
       line-height: 15px;
     }
   }
-  .detail{
-    width:200px;
+  .detail_width(@width){
+    //box-sizing: border-box;
+    width: @width; //设置需要固定的宽度
+    white-space: normal; //不换行
+    text-overflow: ellipsis; //超出部分用....代替
+    overflow: hidden; //超出隐藏
   }
+  @media screen and (max-width: 400px){
+    .detail{
+      .detail_width(100px);
+    };
+  }
+  @media screen and (max-width: 768px)and(min-width: 401px){
+    .detail{
+      .detail_width(250px);
+    };
+  }
+  @media screen and (max-width:996px )and(min-width: 768px){
+    .detail{
+      .detail_width(300px);
+    };
+  }
+
+
 }
 
 

@@ -18,7 +18,7 @@
         <!--数据列表-->
         <ul class="mui-table-view">
             <li class="mui-table-view-cell mui-collapse table">
-                <a href="#">
+                <a href="#" class="mui-navigate-right">
                     <table class="taskTable">
                         <thead>
                         <tr>
@@ -26,7 +26,7 @@
                             <th>状态</th>
                             <th>申请人</th>
                             <th>处理人</th>
-                            <th>描述</th>
+                            <th class="detail" >任务类型</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -39,7 +39,82 @@
                             </td>
                             <td>孟祥吉</td>
                             <td>大王</td>
-                            <td class="detail">过程非常非常复杂过程非常非常复杂过程非常非常复杂过程非常非常复杂</td>
+                            <td>
+                               日常工作
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </a>
+                <div class="mui-collapse-content ">
+                    <table class="taskTable">
+                        <thead>
+                            <tr>
+                                <th>客户</th>
+                                <th>地址</th>
+                                <th>编号</th>
+                                <th>联系方式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>廖柳</td>
+                                <td>朝阳大望路</td>
+                                <td>454231654</td>
+                                <td>18612562171</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>发布时间：<span>2017-03-29T12:00</span></h5>
+                                    <h5>接单时间：<span>2017-03-29T12:00</span></h5>
+                                    <h5>进行时间：<span>2017-03-29T12:00</span></h5>
+                                    <h5>预计时间：<span>2017-03-29T12:00</span></h5>
+                                </td>
+                                <td>
+                                    <h5>质量分：<span>5</span></h5>
+                                    <h5>速度分：<span>5</span></h5>
+                                    <h5>态度分：<span>5</span></h5>
+                                    <h5>总分：<span>15</span></h5>
+                                </td>
+                                <td>
+                                    <h5>调整系数：<span>1.1</span></h5>
+
+                                </td>
+                                <td>
+                                    <h5>数量：<span>5</span></h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li class="mui-table-view-cell mui-collapse table ">
+                <a href="#" class="mui-navigate-right">
+                    <table class="taskTable">
+                        <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>状态</th>
+                            <th>申请人</th>
+                            <th>处理人</th>
+                            <th class="detail" >描述</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>大望路移动</td>
+                            <td class="zhuangtai">
+                                <img src="img/no-response.png" alt="" style="width: 50px"/>
+                                <span class="mui-icon-extra mui-icon-extra-phone"></span>
+                                <i>立即处理</i>
+                            </td>
+                            <td>孟祥吉</td>
+                            <td>大王</td>
+                            <td >
+                                <div  class="detail" title="很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂">
+                                    很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂
+                                </div>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -55,55 +130,49 @@
                         </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>廖柳</td>
+                                <td>朝阳大望路</td>
+                                <td>454231654</td>
+                                <td>18612562171</td>
+                            </tr>
                         <tr>
-                            <td>廖柳</td>
-                            <td>朝阳大望路</td>
-                            <td>454231654</td>
-                            <td>18612562171</td>
-                        </tr>
-                        <tr>
-                            <th>任务类型</th>
+                            <th>任务类型：<span>日常工作</span></th>
                             <th>
-                                <h5>发布时间</h5>
-                                <h5>接单时间</h5>
-                                <h5>进行时间</h5>
-                                <h5>预计时间</h5>
+                                <h5>发布时间：<span>2017-3-29T12:00</span></h5>
+                                <h5>接单时间：<span>2017-3-29T12:00</span></h5>
+                                <h5>进行时间：<span>2017-3-29T12:00</span></h5>
+                                <h5>预计时间：<span>2017-3-29T12:00</span></h5>
                             </th>
                             <th>
-                                <h5>质量分</h5>
-                                <h5>速度分</h5>
-                                <h5>态度分</h5>
-                                <h5>总分</h5>
+                                <h5>质量分：<span>5</span></h5>
+                                <h5>速度分：<span>5</span></h5>
+                                <h5>态度分：<span>5</span></h5>
+                                <h5>总分：<span>15</span></h5>
                             </th>
-                            <th>调整系数</th>
-                            <th>数量</th>
+                            <th>调整系数：<span>1.1</span></th>
+                            <th>数量：<span>5</span></th>
+
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>日常工作</td>
-                            <td>
-                                <h6>2017-3-29T12:00</h6>
-                                <h6>2017-3-29T14:00</h6>
-                                <h6>2017-3-29T18:00</h6>
-                                <h6>2017-3-29T20:00</h6>
-                            </td>
-                            <td>
-                                <h6>5</h6>
-                                <h6>5</h6>
-                                <h6>5</h6>
-                                <h6>15</h6>
-                            </td>
-                            <td>1.1</td>
-                            <td>5</td>
-                        </tr>
-                        </tbody>
                     </table>
                 </div>
             </li>
 
         </ul>
     </div>
+    <li class="mui-table-view-cell mui-transitioning">
+        <div class="mui-slider-right mui-disabled">
+            <a class="mui-btn mui-btn-grey mui-icon mui-icon-person" style="transform: translate(0px, 0px);"></a>
+            <a class="mui-btn mui-btn-yellow mui-icon mui-icon-phone" style="transform: translate(-90px, 0px);"></a>
+            <a class="mui-btn mui-btn-red mui-icon mui-icon-email" style="transform: translate(-180px, 0px);"></a>
+        </div>
+        <div class="mui-slider-handle" style="transform: translate(0px, 0px);">
+            <div class="mui-table-cell">
+                左滑显示多功能菜单
+            </div>
+        </div>
+    </li>
 </div>
 
 <script src="js/mui.js"></script>

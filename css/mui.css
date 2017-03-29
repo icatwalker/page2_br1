@@ -4768,8 +4768,8 @@ body > .mui-progressbar
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     text-decoration: none;
-
-    color: #bbb;
+    font-weight: bold;
+    color: red;
 
     -webkit-font-smoothing: antialiased;
 }
