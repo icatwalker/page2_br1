@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/mui.css"/>
+    <link rel="stylesheet" href="css/myApp.css"/>
+    <link rel="stylesheet" href="css/icons-extra.css"/>
+</head>
+<body>
+<!--下拉刷新容器-->
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+    <div class="mui-pull-top-pocket">
+        <div class="mui-pull">
+        </div>
+    </div>
+    <div class="mui-scroll ">
+        <!--数据列表-->
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse table">
+                <a href="#">
+                    <table class="taskTable">
+                        <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>状态</th>
+                            <th>申请人</th>
+                            <th>处理人</th>
+                            <th>描述</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>大望路移动</td>
+                            <td class="zhuangtai">
+                                <img src="img/no-response.png" alt="" style="width: 50px"/>
+                                <span class="mui-icon-extra mui-icon-extra-phone"></span>
+                                <i>立即处理</i>
+                            </td>
+                            <td>孟祥吉</td>
+                            <td>大王</td>
+                            <td class="detail">过程非常非常复杂过程非常非常复杂过程非常非常复杂过程非常非常复杂</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </a>
+                <div class="mui-collapse-content ">
+                    <table class="taskTable">
+                        <thead>
+                        <tr>
+                            <th>客户</th>
+                            <th>地址</th>
+                            <th>编号</th>
+                            <th>联系方式</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>廖柳</td>
+                            <td>朝阳大望路</td>
+                            <td>454231654</td>
+                            <td>18612562171</td>
+                        </tr>
+                        <tr>
+                            <th>任务类型</th>
+                            <th>
+                                <h5>发布时间</h5>
+                                <h5>接单时间</h5>
+                                <h5>进行时间</h5>
+                                <h5>预计时间</h5>
+                            </th>
+                            <th>
+                                <h5>质量分</h5>
+                                <h5>速度分</h5>
+                                <h5>态度分</h5>
+                                <h5>总分</h5>
+                            </th>
+                            <th>调整系数</th>
+                            <th>数量</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>日常工作</td>
+                            <td>
+                                <h6>2017-3-29T12:00</h6>
+                                <h6>2017-3-29T14:00</h6>
+                                <h6>2017-3-29T18:00</h6>
+                                <h6>2017-3-29T20:00</h6>
+                            </td>
+                            <td>
+                                <h6>5</h6>
+                                <h6>5</h6>
+                                <h6>5</h6>
+                                <h6>15</h6>
+                            </td>
+                            <td>1.1</td>
+                            <td>5</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<script src="js/mui.js"></script>
+<script>
+    mui.init({
+        pullRefresh: {
+            container: '#pullrefresh',
+
+            up: {
+                contentrefresh: '正在加载...',
+                callback: pullupRefresh
+            }
+        }
+    });
+    /**
+     * 下拉刷新具体业务实现
+     */
+    var count = 0;
+    /**
+     * 上拉加载具体业务实现
+     */
+    function pullupRefresh() {
+        setTimeout(function() {
+            mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+            var table = document.body.querySelector('.mui-table-view');
+            var cells = document.body.querySelectorAll('.mui-table-view-cell');
+            for (var i = cells.length, len = i + 5; i < len; i++) {
+                var li = document.createElement('li');
+                li.className = 'mui-table-view-cell';
+                li.innerHTML = '<a>Item ' + (i + 1) + '</a>';
+                table.appendChild(li);
+            }
+        }, 1500);
+    }
+    if (mui.os.plus) {
+        mui.plusReady(function() {
+            setTimeout(function() {
+                mui('#pullrefresh').pullRefresh().pullupLoading();
+            }, 1000);
+
+        });
+    } else {
+        mui.ready(function() {
+            mui('#pullrefresh').pullRefresh().pullupLoading();
+        });
+    }
+</script>
+</body>
+</html>
