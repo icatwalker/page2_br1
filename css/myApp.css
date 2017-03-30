@@ -69,27 +69,11 @@
   height: 15px;
   line-height: 15px;
 }
-@media screen and (max-width: 400px) {
+@media screen {
   #pullrefresh .detail {
-    width: 100px;
+    height: 40px;
+    width: 100%;
     white-space: normal;
     text-overflow: ellipsis;
-    overflow: hidden;
-  }
-}
-@media screen and (max-width: 768px) and (min-width: 401px) {
-  #pullrefresh .detail {
-    width: 250px;
-    white-space: normal;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-}
-@media screen and (max-width: 996px) and (min-width: 768px) {
-  #pullrefresh .detail {
-    width: 300px;
-    white-space: normal;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 }

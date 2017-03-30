@@ -162,3 +162,4 @@ if(correctTime("2017-03-24T18:00")){
 }else{
     console.log("false");
 }
+//取消tel a 的绑定

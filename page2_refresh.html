@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="css/mui.css"/>
-    <link rel="stylesheet" href="css/myApp.css"/>
     <link rel="stylesheet" href="css/icons-extra.css"/>
+    <link rel="stylesheet" href="css/myApp.css"/>
 </head>
 <body>
 <!--下拉刷新容器-->
@@ -22,16 +22,16 @@
                     <table class="taskTable">
                         <thead>
                         <tr>
-                            <th>名称</th>
+                            <th>名称 &nbsp;/&nbsp;类型</th>
                             <th>状态</th>
                             <th>申请人</th>
                             <th>处理人</th>
-                            <th class="detail" >任务类型</th>
+                            <th style="width: 20%">编号/数量</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>大望路移动</td>
+                            <td><span>大望路移动</span>&nbsp;/&nbsp;<i style="color: red">日常</i></td>
                             <td class="zhuangtai">
                                 <img src="img/no-response.png" alt="" style="width: 50px"/>
                                 <span class="mui-icon-extra mui-icon-extra-phone"></span>
@@ -39,9 +39,7 @@
                             </td>
                             <td>孟祥吉</td>
                             <td>大王</td>
-                            <td>
-                               日常工作
-                            </td>
+                            <td style="font-weight: bold"><i>454516</i>&nbsp;/&nbsp;<span>5</span></td>
                         </tr>
                         </tbody>
                     </table>
@@ -50,25 +48,31 @@
                     <table class="taskTable">
                         <thead>
                             <tr>
-                                <th>客户</th>
-                                <th>地址</th>
-                                <th>编号</th>
-                                <th>联系方式</th>
+                                <th style="width: 30%">地址</th>
+                                <th style="width: 15%">客户</th>
+                                <th style="width: 35%">联系方式</th>
+                                <th>任务处理</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td>朝阳大望路104号5单元602</td>
                                 <td>廖柳</td>
-                                <td>朝阳大望路</td>
-                                <td>454231654</td>
-                                <td>18612562171</td>
+                                <td>
+                                    <a href="tel:18612562171" class="tel1">18612562171</a>
+                                </td>
+                                <td>
+                                    <span class="mui-btn-blue">处理</span>
+                                    <span class="mui-btn-red">进程</span>
+                                </td>
+
                             </tr>
                             <tr>
                                 <td>
                                     <h5>发布时间：<span>2017-03-29T12:00</span></h5>
                                     <h5>接单时间：<span>2017-03-29T12:00</span></h5>
                                     <h5>进行时间：<span>2017-03-29T12:00</span></h5>
-                                    <h5>预计时间：<span>2017-03-29T12:00</span></h5>
+                                    <h5>预计时间：<span>8小时</span>&nbsp;/<span style="color: red">系数:</span><i style="color: red">1.1</i></h5>
                                 </td>
                                 <td>
                                     <h5>质量分：<span>5</span></h5>
@@ -76,106 +80,20 @@
                                     <h5>态度分：<span>5</span></h5>
                                     <h5>总分：<span>15</span></h5>
                                 </td>
-                                <td>
-                                    <h5>调整系数：<span>1.1</span></h5>
-
-                                </td>
-                                <td>
-                                    <h5>数量：<span>5</span></h5>
+                                <td colspan="2">
+                                    <div class="detail" style="font-size: 10px;line-height: 12px">
+                                        请根据此图纸做一套信息发布显示系统，主要是在功能房间，入口大厅等位置设置显示屏。需要清单和点位，下班前完成即可。
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </li>
-            <li class="mui-table-view-cell mui-collapse table ">
-                <a href="#" class="mui-navigate-right">
-                    <table class="taskTable">
-                        <thead>
-                        <tr>
-                            <th>名称</th>
-                            <th>状态</th>
-                            <th>申请人</th>
-                            <th>处理人</th>
-                            <th class="detail" >描述</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>大望路移动</td>
-                            <td class="zhuangtai">
-                                <img src="img/no-response.png" alt="" style="width: 50px"/>
-                                <span class="mui-icon-extra mui-icon-extra-phone"></span>
-                                <i>立即处理</i>
-                            </td>
-                            <td>孟祥吉</td>
-                            <td>大王</td>
-                            <td >
-                                <div  class="detail" title="很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂">
-                                    很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂很复杂
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </a>
-                <div class="mui-collapse-content ">
-                    <table class="taskTable">
-                        <thead>
-                        <tr>
-                            <th>客户</th>
-                            <th>地址</th>
-                            <th>编号</th>
-                            <th>联系方式</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>廖柳</td>
-                                <td>朝阳大望路</td>
-                                <td>454231654</td>
-                                <td>18612562171</td>
-                            </tr>
-                        <tr>
-                            <th>任务类型：<span>日常工作</span></th>
-                            <th>
-                                <h5>发布时间：<span>2017-3-29T12:00</span></h5>
-                                <h5>接单时间：<span>2017-3-29T12:00</span></h5>
-                                <h5>进行时间：<span>2017-3-29T12:00</span></h5>
-                                <h5>预计时间：<span>2017-3-29T12:00</span></h5>
-                            </th>
-                            <th>
-                                <h5>质量分：<span>5</span></h5>
-                                <h5>速度分：<span>5</span></h5>
-                                <h5>态度分：<span>5</span></h5>
-                                <h5>总分：<span>15</span></h5>
-                            </th>
-                            <th>调整系数：<span>1.1</span></th>
-                            <th>数量：<span>5</span></th>
-
-                        </tr>
-                        </thead>
-                    </table>
-                </div>
-            </li>
-
         </ul>
     </div>
-    <li class="mui-table-view-cell mui-transitioning">
-        <div class="mui-slider-right mui-disabled">
-            <a class="mui-btn mui-btn-grey mui-icon mui-icon-person" style="transform: translate(0px, 0px);"></a>
-            <a class="mui-btn mui-btn-yellow mui-icon mui-icon-phone" style="transform: translate(-90px, 0px);"></a>
-            <a class="mui-btn mui-btn-red mui-icon mui-icon-email" style="transform: translate(-180px, 0px);"></a>
-        </div>
-        <div class="mui-slider-handle" style="transform: translate(0px, 0px);">
-            <div class="mui-table-cell">
-                左滑显示多功能菜单
-            </div>
-        </div>
-    </li>
 </div>
 
-<script src="js/mui.js"></script>
 <script>
     mui.init({
         pullRefresh: {
@@ -220,5 +138,7 @@
         });
     }
 </script>
+<script src="js/mui.js"></script>
+<script src="js/page2.js"></script>
 </body>
 </html>
