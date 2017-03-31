@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 #totalTime {
   color: #000;
   font-weight: bold;
@@ -76,4 +80,9 @@
     white-space: normal;
     text-overflow: ellipsis;
   }
+}
+.projectName {
+  width: 80%;
+  white-space: normal;
+  text-overflow: ellipsis;
 }

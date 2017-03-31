@@ -125,20 +125,20 @@
         for (var i = 0; i < result.length; i++) {
           var tj;
           var qtime;
-          var name = result[i].Name;
-          var describe = result[i].Contents.substring(0,25);
-          var address = result[i].Address.substring(0,25);
-          var lxrname = result[i].LXRName;
-          var jinjichengdu = result[i].StrJinJiChengDu;
-          var chuliway = result[i].Way;
-          var state = result[i].State;
-          var tuijian = result[i].TuiJianLXR;
-          var prname=result[i].ProjectName;
-          var strdate = result[i].StarQuestionTime;
-          var ptend =result[i].ptEnd;
-          var currenpeople = result[i].CurrentPeople;
-          var UpQuestionTime = timeFormattertest(result[i].UpQuestionTime);
-          var lxrmobile = result[i].LXRMobiles.substring(0,7);
+          var name = result[i].Name;//申请人
+          var describe = result[i].Contents.substring(0,25);//描述
+          var address = result[i].Address.substring(0,25);//地址
+          var lxrname = result[i].LXRName;//联系人
+          var jinjichengdu = result[i].StrJinJiChengDu;//紧急程度
+          var chuliway = result[i].Way;//日常
+          var state = result[i].State;//状态
+          var tuijian = result[i].TuiJianLXR;//推荐人
+          var prname=result[i].ProjectName; //项目名
+          var strdate = result[i].StarQuestionTime;//接单时间
+          var ptend =result[i].ptEnd;//最近处理时间
+          var currenpeople = result[i].CurrentPeople;//现处理人
+          var UpQuestionTime = timeFormattertest(result[i].UpQuestionTime);//发布时间
+          var lxrmobile = result[i].LXRMobiles.substring(0,7);//联系人电话
           
 
           if(lxrmobile==""){lxrmobile="&nbsp;"}else{lxrmobile = lxrmobile+ "****";}

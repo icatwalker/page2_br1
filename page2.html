@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/mui.css"/>
     <link rel="stylesheet" href="css/icons-extra.css"/>
     <link rel="stylesheet" href="css/myApp.css"/>
+    <style>
+    </style>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav">
@@ -15,87 +17,45 @@
     <h1 class="mui-title">标题</h1>
 </header>
 <div class="mui-content" >
-    <div id="pullrefresh"  style="margin-top: 48px" class="mui-content mui-scroll-wrapper">
-        <div class="mui-pull-top-pocket">
-            <div class="mui-pull">
+    <div style="height:100px;">
+        <div class="mui-row" style="height:60px ;" >
+            <div class="mui-col-xs-6">
+                <input type="text" name="" class="sousuo" id="sousuo" placeholder="查询内容"/>
+            </div>
+            <div class="mui-col-xs-6">
+                <input type="checkbox" name="jilu" id="caozuo"/><label for="caozuo" style="height:50%">记录</label>
+                <button type="submit"  class="mui-btn mui-btn-primary" id="chaxun" style="height:50%">搜索</button>
             </div>
         </div>
+        <div class="mui-row" >
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="申请人" id="Name"/><label for="Name">申请人</label>
+            </div>
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="描述" id="Contents"/><label for="Contents">描述</label>
+            </div>
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="联系人" id="LXRName"/><label for="LXRName">目标联系人</label>
+            </div>
+
+        </div>
+        <div class="mui-row">
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="目标电话" id="LXRMobile"/><label for="LXRMobile">联系人电话</label>
+            </div>
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="推荐处理人" id="TuiJianLXR"/><label for="TuiJianLXR">推荐处理人</label>
+            </div>
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="当前处理人" id="CurrentPeople"/><label for="CurrentPeople">当前处理人</label>
+            </div>
+        </div>
+    </div>
+    <div id="pullrefresh"  style="margin-top: 148px" class="mui-content mui-scroll-wrapper">
         <div class="mui-scroll ">
             <!--数据列表-->
-            <ul class="mui-table-view">
-                <li class="mui-table-view-cell mui-collapse table">
-                    <a href="#" class="mui-navigate-right">
-                        <table class="taskTable">
-                            <thead>
-                            <tr>
-                                <th>名称 &nbsp;/&nbsp;类型</th>
-                                <th>状态</th>
-                                <th>申请人</th>
-                                <th>处理人</th>
-                                <th style="width: 20%">编号/数量</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><span>大望路移动</span>&nbsp;/&nbsp;<i style="color: red">日常</i></td>
-                                <td class="zhuangtai">
-                                    <img src="img/no-response.png" alt="" style="width: 50px"/>
-                                    <span class="mui-icon-extra mui-icon-extra-phone"></span>
-                                    <i>立即处理</i>
-                                </td>
-                                <td>孟祥吉</td>
-                                <td>大王</td>
-                                <td style="font-weight: bold"><i>454516</i>&nbsp;/&nbsp;<span>5</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </a>
-                    <div class="mui-collapse-content ">
-                        <table class="taskTable">
-                            <thead>
-                            <tr>
-                                <th style="width: 30%">地址</th>
-                                <th style="width: 15%">客户</th>
-                                <th style="width: 35%">联系方式</th>
-                                <th>任务处理</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>朝阳大望路104号5单元602</td>
-                                <td>廖柳</td>
-                                <td>
-                                    <a href="tel:18612562171" class="tel1">18612562171</a>
-                                </td>
-                                <td>
-                                    <span class="mui-btn-blue">处理</span>
-                                    <span class="mui-btn-red">进程</span>
-                                </td>
+            <ul class="mui-table-view" id="tbody-result">
 
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5>发布时间：<span>2017-03-29T12:00</span></h5>
-                                    <h5>接单时间：<span>2017-03-29T12:00</span></h5>
-                                    <h5>进行时间：<span>2017-03-29T12:00</span></h5>
-                                    <h5>预计时间：<span>8小时</span>&nbsp;/<span style="color: red">系数:</span><i style="color: red">1.1</i></h5>
-                                </td>
-                                <td>
-                                    <h5>质量分：<span>5</span></h5>
-                                    <h5>速度分：<span>5</span></h5>
-                                    <h5>态度分：<span>5</span></h5>
-                                    <h5>总分：<span>15</span></h5>
-                                </td>
-                                <td colspan="2">
-                                    <div class="detail" style="font-size: 10px;line-height: 12px">
-                                        请根据此图纸做一套信息发布显示系统，主要是在功能房间，入口大厅等位置设置显示屏。需要清单和点位，下班前完成即可。
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </li>
             </ul>
         </div>
     </div>

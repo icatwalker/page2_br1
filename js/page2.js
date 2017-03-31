@@ -1,19 +1,27 @@
 /**
  * Created by Administrator on 2017/3/24.
  */
+
+//远吗
+
 mui.init({
     pullRefresh: {
         container: '#pullrefresh',
-
-        up: {
-            contentrefresh: '正在加载...',
-            callback: pullupRefresh
+        down: {
+            callback: pulldownRefresh
         }
     }
 });
 /**
  * 下拉刷新具体业务实现
  */
+function pulldownRefresh() {
+    setTimeout(function() {
+        var table = document.body.querySelector('.mui-table-view');
+        var cells = document.body.querySelectorAll('.mui-table-view-cell');
+        mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+    }, 1500);
+}
 var count = 0;
 /**
  * 上拉加载具体业务实现
@@ -21,14 +29,6 @@ var count = 0;
 function pullupRefresh() {
     setTimeout(function() {
         mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
-        var table = document.body.querySelector('.mui-table-view');
-        var cells = document.body.querySelectorAll('.mui-table-view-cell');
-        for (var i = cells.length, len = i + 5; i < len; i++) {
-            var li = document.createElement('li');
-            li.className = 'mui-table-view-cell';
-            li.innerHTML = '<a>Item ' + (i + 1) + '</a>';
-            table.appendChild(li);
-        }
     }, 1500);
 }
 if (mui.os.plus) {
@@ -36,13 +36,13 @@ if (mui.os.plus) {
         setTimeout(function() {
             mui('#pullrefresh').pullRefresh().pullupLoading();
         }, 1000);
-
     });
 } else {
     mui.ready(function() {
-        mui('#pullrefresh').pullRefresh();
+        mui('#pullrefresh').pullRefresh().pullupLoading();
     });
 }
+
 //mui不支持跨域 只能用 jquery
 
 //显示表格的全部内容
@@ -78,8 +78,6 @@ function getinfo(url)
                 }
             }
             result.sort(up);
-
-
             for (var i = 0; i < result.length; i++) {
                 var tj;
                 var qtime;
@@ -92,14 +90,15 @@ function getinfo(url)
                 var state = result[i].State;
                 var tuijian = result[i].TuiJianLXR;
                 var prname=result[i].ProjectName;
+                var prnum1=result[i].ProjectNumber;
                 var strdate = result[i].StarQuestionTime;
                 var ptend =result[i].ptEnd;
                 var currenpeople = result[i].CurrentPeople;
                 var UpQuestionTime = timeFormattertest(result[i].UpQuestionTime);
-                var lxrmobile = result[i].LXRMobiles.substring(0,7);
+                var lxrmobile = result[i].LXRMobiles.substring(0,11);
 
-
-                if(lxrmobile==""){lxrmobile="&nbsp;"}else{lxrmobile = lxrmobile+ "****";}
+                console.log(lxrmobile);
+                //if(lxrmobile==""){lxrmobile="&nbsp;"}else{lxrmobile = lxrmobile+ "****";}
                 describe=nullreturn(describe);
                 address=nullreturn(address);
                 lxrname=nullreturn(lxrname);
@@ -114,7 +113,6 @@ function getinfo(url)
                     }
                     return e;
                 }
-
                 if (state==1) {
                     state = "<img src = 'images/1.png'/>";
                     if(tuijian ==""){ tj="&nbsp;"}else{ tj = tuijian}
@@ -134,25 +132,82 @@ function getinfo(url)
                 if (result[i].StarQuestionTime!= null) {
                     strdate = timeFormattertest(strdate);
                     ptend =timeFormattertest(ptend);
-
                     qtime="接单时间:<br />"+strdate+"<br />最近处理:<br />" + ptend
                 }else{qtime="&nbsp;"}
+                str += `<li class="mui-table-view-cell mui-collapse table">
+                    <a href="#" class="mui-navigate-right">
+                        <table class="taskTable">
+                            <thead>
+                            <tr>
+                                <th >名称 &nbsp;/&nbsp;类型</th>
+                                <th>状态</th>
+                                <th>申请人</th>
+                                <th>处理人</th>
+                                <th style="width: 20%">编号/数量</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td width="30%"><span class="projectName">${prname}</span>&nbsp;/&nbsp;<i style="color: red">${chuliway}</i></td>
+                                <td class="zhuangtai">
+                                    <img src="img/no-response.png" alt="" style="width: 50px"/>
+                                    <span class="mui-icon-extra mui-icon-extra-phone"></span>
+                                    <i>${jinjichengdu}</i>
+                                </td>
+                                <td>${name}</td>
+                                <td>${currenpeople}</td>
+                                <td style="font-weight: bold"><i>55488</i>&nbsp;/&nbsp;<span>5</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </a>
+                    <div class="mui-collapse-content ">
+                        <table class="taskTable">
+                            <thead>
+                            <tr>
+                                <th style="width: 30%">地址</th>
+                                <th style="width: 15%">客户</th>
+                                <th style="width: 35%">联系方式</th>
+                                <th>任务处理</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>${address}</td>
+                                <td>${lxrname}</td>
+                                <td>
+                                    <span>${lxrmobile}</span>
+                                </td>
+                                <td>
+                                    <span class="mui-btn-blue">处理</span>
+                                    <span class="mui-btn-red">进程</span>
+                                </td>
 
-                str += '<tr>' +
-                "<td width=\"80px\">" + name + "</td>" +
-                "<td width=\"150px\">" + prname + "</td>" +
-                "<td width=\"250px\">" + describe + "</td>" +
-                "<td width=\"230px\">" + address + "</td>" +
-                "<td width=\"80px\"> " + lxrname + "</td>" +
-                "<td width=\"110px\">" +lxrmobile+"</td>" +
-                "<td  width=\"80px\">" + jinjichengdu + "</td>" +
-                "<td width=\"120px\">" + chuliway + "</td>" +
-                "<td width=\"130px\" class=\"sm\" align=\"center\">"+state+"</td>" +
-                "<td width=\"90px\">" + tj + "</td>" +
-                "<td width=\"200px\" >" +qtime+ "</td>" +
-                "<td width=\"115px\" class=\"td13\">" + UpQuestionTime+ "</td>" +
-                "<td width=\"160px\" height=\"170px\" id=\"qrcode" + i + "\" align=\"center\"><img src = 'images/er.png'/>"+ "</td>" +
-                "</tr>";
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>发布时间：<span>${UpQuestionTime}</span></h5>
+                                    <h5>接单时间：<span>${strdate}</span></h5>
+                                    <h5>进行时间：<span>${ptend}</span></h5>
+                                    <h5>预计时间：<span>8小时</span>&nbsp;/<span style="color: red">系数:</span><i style="color: red">1.1</i></h5>
+                                </td>
+                                <td>
+                                    <h5>质量分：<span>5</span></h5>
+                                    <h5>速度分：<span>5</span></h5>
+                                    <h5>态度分：<span>5</span></h5>
+                                    <h5>总分：<span>15</span></h5>
+                                </td>
+                                <td colspan="2">
+                                    <div class="detail" style="font-size: 10px;line-height: 12px">
+                                    ${describe}
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+`;
             }
             $("#tbody-result").html(str);
             /**for (var j = 0; j < result.length ; j++) {
@@ -190,9 +245,7 @@ function timeFormattertest(value) {
     if (h<10) {h ="0"+ h}
     var m = da.getMinutes();
     if (m <10){m = "0" + m}
-    var s = da.getSeconds();
-    if (s<10) {s = "0" + s}
-    return y + "-" + mo + "-" + day + " "+ h +":"+ m +":"+ s;
+    return y + "-" + mo + "-" + day + " "+ h +":"+ m;
 }
 
 //查询复选框的数据要提出的数据
