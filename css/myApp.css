@@ -48,6 +48,12 @@
   border: 1px solid #000000;
   background: #ffffff;
 }
+#pullrefresh .taskTable button {
+  padding: 1.6px;
+  font-size: 16px;
+  height: 16px "4px";
+  line-height: 16px;
+}
 #pullrefresh .zhuangtai {
   position: relative;
   padding-bottom: 10px;
@@ -59,9 +65,9 @@
 }
 #pullrefresh .zhuangtai span {
   font-size: 20px;
-  color: blue;
+  color: #01FFFF;
   top: 0;
-  background: fuchsia;
+  background: #0000FE;
 }
 #pullrefresh .zhuangtai i {
   font-size: 10px;

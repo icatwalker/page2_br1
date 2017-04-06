@@ -53,7 +53,14 @@
       border:1px solid @border_color;
       background: @td_background;
     }
-
+    //æŒ‰é’®å¤§å°è®¾ç½®
+    @button_size:16px;
+    button{
+      padding:@button_size/10;
+      font-size: @button_size;
+      height:@button_size+"4px";
+      line-height: @button_size;
+    }
   }
   .zhuangtai{
     position: relative;
@@ -65,9 +72,9 @@
     }
     span{
       font-size: 20px;
-      color:blue;
+      color:#01FFFF;
       top:0;
-      background:fuchsia;
+      background:#0000FE;
     }
     i{
       font-size: 10px;
@@ -83,10 +90,10 @@
   .detail_width(@width){
     //box-sizing: border-box;
     height:40px;
-    width: @width; //ÉèÖÃĞèÒª¹Ì¶¨µÄ¿í¶È
-    white-space: normal;//²»»»ĞĞ
-    text-overflow: ellipsis; //³¬³ö²¿·ÖÓÃ....´úÌæ
-    //overflow: hidden; //³¬³öÒş²Ø
+    width: @width; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ì¶ï¿½ï¿½Ä¿ï¿½ï¿½
+    white-space: normal;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    text-overflow: ellipsis; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½....ï¿½ï¿½ï¿½ï¿½
+    //overflow: hidden; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   }
   @media screen{
     .detail{
@@ -94,12 +101,12 @@
     };
   }
 }
-//±í¸ñµÄÑùÊ½
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 .projectName{
   //box-sizing: border-box;
-  width: 80%; //ÉèÖÃĞèÒª¹Ì¶¨µÄ¿í¶È
-  white-space: normal;//²»»»ĞĞ
-  text-overflow: ellipsis; //³¬³ö²¿·ÖÓÃ....´úÌæ
+  width: 80%; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ì¶ï¿½ï¿½Ä¿ï¿½ï¿½
+  white-space: normal;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  text-overflow: ellipsis; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½....ï¿½ï¿½ï¿½ï¿½
 
 }
 

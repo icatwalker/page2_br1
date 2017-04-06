@@ -3,7 +3,10 @@
  */
 
 //远吗
-
+//代替console.log()
+function testW(n){
+    console.log(n);
+}
 mui.init({
     pullRefresh: {
         container: '#pullrefresh',
@@ -96,8 +99,20 @@ function getinfo(url)
                 var currenpeople = result[i].CurrentPeople;
                 var UpQuestionTime = timeFormattertest(result[i].UpQuestionTime);
                 var lxrmobile = result[i].LXRMobiles.substring(0,11);
+                var strismobileOrcomputer=result[i].strismobileOrcomputer;
 
-                console.log(lxrmobile);
+                var ismobileOrcomputer=result[i].ismobileOrcomputer;
+                // 如果是0 输出的是手机其余是电脑
+                switch (ismobileOrcomputer){
+                    case 0:ismobileOrcomputer='mui-icon-extra-phone';
+                        break;
+                    case 1:ismobileOrcomputer='mui-icon-extra-computer';
+                        break;
+                    case 2:ismobileOrcomputer='mui-icon-extra-computer';
+                        break;
+                }
+
+                //console.log(ismobileOrcomputer);
                 //if(lxrmobile==""){lxrmobile="&nbsp;"}else{lxrmobile = lxrmobile+ "****";}
                 describe=nullreturn(describe);
                 address=nullreturn(address);
@@ -114,18 +129,18 @@ function getinfo(url)
                     return e;
                 }
                 if (state==1) {
-                    state = "<img src = 'images/1.png'/>";
+                    state = 'img/1.png';
                     if(tuijian ==""){ tj="&nbsp;"}else{ tj = tuijian}
                 } else if (state==2) {
-                    state = "<img src = 'images/2.gif'/>";
+                    state = 'img/2.gif';
                     if(currenpeople ==""){tj="&nbsp;"}else{tj= currenpeople}
                 } else if (state==3) {
-                    state = "<img src = 'images/3.png'/>";
+                    state = 'img/3.png';
                     if(currenpeople ==""){tj="&nbsp;"}else{tj= currenpeople}
                 }else if(state==4){
-                    state = "<img src = 'images/4.png'/>";
+                    state ='img/4.png';
                 }else {
-                    state = "<img src = 'images/5.png'/>";
+                    state ='img/5.png';
                     if(currenpeople ==""){tj="&nbsp;"}else{tj= currenpeople}
                 }
 
@@ -150,8 +165,8 @@ function getinfo(url)
                             <tr>
                                 <td width="30%"><span class="projectName">${prname}</span>&nbsp;/&nbsp;<i style="color: red">${chuliway}</i></td>
                                 <td class="zhuangtai">
-                                    <img src="img/no-response.png" alt="" style="width: 50px"/>
-                                    <span class="mui-icon-extra mui-icon-extra-phone"></span>
+                                    <img src="${state}" alt="" style="width: 50px"/>
+                                    <span class="mui-icon-extra ${ismobileOrcomputer}"></span>
                                     <i>${jinjichengdu}</i>
                                 </td>
                                 <td>${name}</td>
@@ -179,8 +194,8 @@ function getinfo(url)
                                     <span>${lxrmobile}</span>
                                 </td>
                                 <td>
-                                    <span class="mui-btn-blue">处理</span>
-                                    <span class="mui-btn-red">进程</span>
+                                    <button type="button" class="mui-btn mui-btn-primary btn1" >处理</button>
+                                    <button type="button" class="mui-btn mui-btn-success btn2" >进程</button>
                                 </td>
 
                             </tr>
@@ -192,10 +207,10 @@ function getinfo(url)
                                     <h5>预计时间：<span>8小时</span>&nbsp;/<span style="color: red">系数:</span><i style="color: red">1.1</i></h5>
                                 </td>
                                 <td>
-                                    <h5>质量分：<span>5</span></h5>
-                                    <h5>速度分：<span>5</span></h5>
-                                    <h5>态度分：<span>5</span></h5>
-                                    <h5>总分：<span>15</span></h5>
+                                    <h5>质量分：<span>0</span></h5>
+                                    <h5>速度分：<span>0</span></h5>
+                                    <h5>态度分：<span>0</span></h5>
+                                    <h5>总分：<span>0</span></h5>
                                 </td>
                                 <td colspan="2">
                                     <div class="detail" style="font-size: 10px;line-height: 12px">
@@ -279,3 +294,20 @@ $("#chaxun").click(function() {
     setInterval(function(){ getinfo(qurl);},50000);
 });
 
+
+//事假代理 按钮
+$("#tbody-result").click("button.btn1",function(event){
+    var target=event.target;
+    console.log(target.className);
+    if(target.className.indexOf("btn1")!=-1){
+       testW("btn1");
+
+    }
+
+})
+;$("#tbody-result").click("button.btn2",function(event){
+    var target=event.target;
+    if(target.className.indexOf("btn2")!=-1){
+        testW("btn2");
+    }
+});
