@@ -12,56 +12,106 @@
     </style>
 </head>
 <body>
-<header class="mui-bar mui-bar-nav">
-    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-    <h1 class="mui-title">标题</h1>
-</header>
-<div class="mui-content" >
-    <div style="height:100px;">
-        <div class="mui-row" style="height:60px ;" >
-            <div class="mui-col-xs-6">
-                <input type="text" name="" class="sousuo" id="sousuo" placeholder="查询内容"/>
+<div class="mui-off-canvas-wrap mui-draggable">
+    <!-- 菜单容器 -->
+    <div class="mui-inner-wrap">
+        <aside class="mui-off-canvas-left">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="aside_page">
+                    <!-- 菜单具体展示内容 -->
+                   <!--<span id="close" class="mui-icon mui-icon-closeempty"></span>-->
+                    <div class="aside_detail">
+                        <h4>任务描述</h4>
+                        <textarea name="" cols="20" rows="3">Lorem  nulla quod mos dolorem hic reprehenderit tempore. Deserunt dolor illo minus temporibus veritatis! Architecto blanditiis officiis possimus provident?</textarea>
+                    </div>
+                    <div class="aside_history">
+                        <h4>历史记录</h4>
+                        <textarea name=""  cols="20" rows="3" >
+处理人：杜春燕
+条件满足度：满足
+满足度说明：满足等
+处理方法：12、13寸小显示屏长宽高尺寸测量、拍照、抠图去背景加效果图、标注尺寸
+                        </textarea>
+                    </div>
+                    <div class="aside_solve">
+                        <form class="mui-input-group">
+                            <div class="mui-input-row">
+                                <label>处理人</label>
+                                <input type="text" placeholder="孟祥吉" disabled>
+                            </div>
+                            <div class="mui-input-row">
+                                <label>满足度</label>
+                                星星评价
+                            </div>
+                            <div class="mui-input-row">
+                                <textarea name="" cols="30" rows="2" placeholder="条件满足说明"></textarea>
+                            </div>
+                            <div class="mui-input-row">
+                                <textarea name="" cols="30" rows="2" placeholder="处理方法及结果"></textarea>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="mui-col-xs-6">
-                <input type="checkbox" name="jilu" id="caozuo"/><label for="caozuo" style="height:50%">记录</label>
-                <button type="submit"  class="mui-btn mui-btn-primary" id="chaxun" style="height:50%">搜索</button>
+        </aside>
+    <!-- 主页面容器 -->
+
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+            <h1 class="mui-title">标题</h1>
+        </header>
+        <div class="mui-content mui-scroll-wrapper" >
+            <div style="height:100px;" class="mui-scroll">
+                <div class="mui-row" style="height:60px ;" >
+                    <div class="mui-col-xs-6">
+                        <input type="text" name="" class="sousuo" id="sousuo" placeholder="查询内容"/>
+                    </div>
+                    <div class="mui-col-xs-6">
+                        <input type="checkbox" name="jilu" id="caozuo"/><label for="caozuo" style="height:50%">记录</label>
+                        <button type="submit"  class="mui-btn mui-btn-primary" id="chaxun" style="height:50%">搜索</button>
+                    </div>
+                </div>
+                <div class="mui-row" >
+                    <div class="mui-col-xs-4">
+                        <input type="checkbox" name="cc" value="申请人" id="Name"/><label for="Name">申请人</label>
+                    </div>
+                    <div class="mui-col-xs-4">
+                        <input type="checkbox" name="cc" value="描述" id="Contents"/><label for="Contents">描述</label>
+                    </div>
+                    <div class="mui-col-xs-4">
+                        <input type="checkbox" name="cc" value="联系人" id="LXRName"/><label for="LXRName">目标联系人</label>
+                    </div>
+
+                </div>
+                <div class="mui-row">
+                    <div class="mui-col-xs-4">
+                        <input type="checkbox" name="cc" value="目标电话" id="LXRMobile"/><label for="LXRMobile">联系人电话</label>
+                    </div>
+                    <div class="mui-col-xs-4">
+                        <input type="checkbox" name="cc" value="推荐处理人" id="TuiJianLXR"/><label for="TuiJianLXR">推荐处理人</label>
+                    </div>
+                    <div class="mui-col-xs-4">
+                        <input type="checkbox" name="cc" value="当前处理人" id="CurrentPeople"/><label for="CurrentPeople">当前处理人</label>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="mui-row" >
-            <div class="mui-col-xs-4">
-                <input type="checkbox" name="cc" value="申请人" id="Name"/><label for="Name">申请人</label>
-            </div>
-            <div class="mui-col-xs-4">
-                <input type="checkbox" name="cc" value="描述" id="Contents"/><label for="Contents">描述</label>
-            </div>
-            <div class="mui-col-xs-4">
-                <input type="checkbox" name="cc" value="联系人" id="LXRName"/><label for="LXRName">目标联系人</label>
+            <div id="pullrefresh"  style="margin-top: 148px" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll ">
+                    <!--数据列表-->
+                    <ul class="mui-table-view" id="tbody-result">
+
+                    </ul>
+                </div>
             </div>
 
         </div>
-        <div class="mui-row">
-            <div class="mui-col-xs-4">
-                <input type="checkbox" name="cc" value="目标电话" id="LXRMobile"/><label for="LXRMobile">联系人电话</label>
-            </div>
-            <div class="mui-col-xs-4">
-                <input type="checkbox" name="cc" value="推荐处理人" id="TuiJianLXR"/><label for="TuiJianLXR">推荐处理人</label>
-            </div>
-            <div class="mui-col-xs-4">
-                <input type="checkbox" name="cc" value="当前处理人" id="CurrentPeople"/><label for="CurrentPeople">当前处理人</label>
-            </div>
-        </div>
     </div>
-    <div id="pullrefresh"  style="margin-top: 148px" class="mui-content mui-scroll-wrapper">
-        <div class="mui-scroll ">
-            <!--数据列表-->
-            <ul class="mui-table-view" id="tbody-result">
-
-            </ul>
-        </div>
-    </div>
-    <script src="js/jquery-1.6.4.min.js"></script>
-    <script src="js/mui.js"></script>
-    <script src="js/page2.js"></script>
 </div>
+<script src="js/jquery-1.6.4.min.js"></script>
+<script src="js/mui.js"></script>
+<script src="js/update.js"></script>
+<script src="js/page2.js"></script>
+
 </body>
 </html>

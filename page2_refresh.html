@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/mui.css"/>
+    <link rel="stylesheet" href="css/icons-extra.css"/>
+    <link rel="stylesheet" href="css/myApp.css"/>
+</head>
+<body>
+<div class="mui-content" >
+    <div id="searchContainer">
+        <div class="mui-row" >
+            <div class="mui-col-xs-6">
+                <input type="text" name="" class="sousuo" id="sousuo" placeholder="查询内容"/>
+            </div>
+            <div class="mui-col-xs-6">
+                <input type="checkbox" name="jilu" id="caozuo"/><label for="caozuo" style="height:50%">记录</label>
+                <button type="submit"  class="mui-btn mui-btn-primary" id="chaxun" style="height:50%">搜索</button>
+            </div>
+        </div>
+        <div class="mui-row" >
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="申请人" id="Name"/><label for="Name">申请人</label>
+            </div>
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="描述" id="Contents"/><label for="Contents">描述</label>
+            </div>
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="联系人" id="LXRName"/><label for="LXRName">目标联系人</label>
+            </div>
+
+        </div>
+        <div class="mui-row">
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="目标电话" id="LXRMobile"/><label for="LXRMobile">联系人电话</label>
+            </div>
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="推荐处理人" id="TuiJianLXR"/><label for="TuiJianLXR">推荐处理人</label>
+            </div>
+            <div class="mui-col-xs-4">
+                <input type="checkbox" name="cc" value="当前处理人" id="CurrentPeople"/><label for="CurrentPeople">当前处理人</label>
+            </div>
+        </div>
+    </div>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll ">
+            <!--数据列表-->
+            <ul class="mui-table-view" id="tbody-result">
+            </ul>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/mui.js"></script>
+    <script src="js/page2.js"></script>
+</div>
+</body>
+</html>
+

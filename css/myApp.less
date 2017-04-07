@@ -2,11 +2,30 @@
   margin:0;
   padding:0;
 }
+body{
+  font-size: 10px;
+}
+.clearfix:after{
+  content: " ";
+  display:block;
+  clear:both;
+  height:0;
+}
+.clearmar:before{
+  content:"";
+  display:table;
+}
+.clearfix{zoom:1;}
 #totalTime{
   color:#000;
   font-weight: bold;
 }
+#searchContainer{
+  z-index: 100;
+  //border:1px solid red;
+}
 #pullrefresh{
+  margin-top:100px;
  @border_color:#000;
   .table{
     a{
@@ -38,23 +57,24 @@
       font-weight: 600;
       border-bottom: 1px solid @border_color;
       padding:0;
-      font-size: 60%;
+      font-size: .5rem;
+      height:1rem;
     }
     @th_background:#4FADA1;
     th{
       font-weight: 600;
-      font-size: 13px;
+      font-size: 0.5rem;
       border:1px solid @border_color;
       background: @th_background;
     }
     @td_background:#fff;
     td{
-      font-size: 12px;
+      font-size: .8rem;
       border:1px solid @border_color;
       background: @td_background;
     }
     //按钮大小设置
-    @button_size:16px;
+    @button_size:1.2rem;
     button{
       padding:@button_size/10;
       font-size: @button_size;
@@ -71,13 +91,13 @@
 
     }
     span{
-      font-size: 20px;
+      font-size: 1.6rem;
       color:#01FFFF;
       top:0;
       background:#0000FE;
     }
     i{
-      font-size: 10px;
+      font-size: .83rem;
       bottom:-1px;
       font-style: normal;
       background: rgba(0,126,229,.5);
@@ -101,12 +121,34 @@
     };
   }
 }
-//������ʽ
+//�
 .projectName{
   //box-sizing: border-box;
-  width: 80%; //������Ҫ�̶��Ŀ��
+  width: 80%; //��
   white-space: normal;//������
-  text-overflow: ellipsis; //����������....����
+  text-overflow: ellipsis; //������
 
 }
-
+//菜单容器
+#aside_page{
+  background: #4FADA1;
+  position: relative;
+  padding:.2rem .1rem;
+  textarea{
+    font-size: 1rem;
+    padding:.1rem;
+  }
+  @close_size:1.5rem;
+  #close{
+    position:absolute ;
+    top:0;
+    left:0;
+    color:white;
+    font-weight: bold;
+    font-size: @close_size;
+    height:@close_size;
+    width: @close_size;
+    border-radius: 50%;
+    background: #01FFFF;
+  }
+}

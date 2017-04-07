@@ -2,9 +2,31 @@
   margin: 0;
   padding: 0;
 }
+body {
+  font-size: 10px;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearmar:before {
+  content: "";
+  display: table;
+}
+.clearfix {
+  zoom: 1;
+}
 #totalTime {
   color: #000;
   font-weight: bold;
+}
+#searchContainer {
+  z-index: 100;
+}
+#pullrefresh {
+  margin-top: 100px;
 }
 #pullrefresh .table a {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -35,24 +57,25 @@
   font-weight: 600;
   border-bottom: 1px solid #000000;
   padding: 0;
-  font-size: 60%;
+  font-size: .5rem;
+  height: 1rem;
 }
 #pullrefresh .taskTable th {
   font-weight: 600;
-  font-size: 13px;
+  font-size: 0.5rem;
   border: 1px solid #000000;
   background: #4fada1;
 }
 #pullrefresh .taskTable td {
-  font-size: 12px;
+  font-size: .8rem;
   border: 1px solid #000000;
   background: #ffffff;
 }
 #pullrefresh .taskTable button {
-  padding: 1.6px;
-  font-size: 16px;
-  height: 16px "4px";
-  line-height: 16px;
+  padding: 0.12rem;
+  font-size: 1.2rem;
+  height: 1.2rem "4px";
+  line-height: 1.2rem;
 }
 #pullrefresh .zhuangtai {
   position: relative;
@@ -64,13 +87,13 @@
   position: absolute;
 }
 #pullrefresh .zhuangtai span {
-  font-size: 20px;
+  font-size: 1.6rem;
   color: #01FFFF;
   top: 0;
   background: #0000FE;
 }
 #pullrefresh .zhuangtai i {
-  font-size: 10px;
+  font-size: .83rem;
   bottom: -1px;
   font-style: normal;
   background: rgba(0, 126, 229, 0.5);
@@ -91,4 +114,25 @@
   width: 80%;
   white-space: normal;
   text-overflow: ellipsis;
+}
+#aside_page {
+  background: #4FADA1;
+  position: relative;
+  padding: .2rem .1rem;
+}
+#aside_page textarea {
+  font-size: 1rem;
+  padding: .1rem;
+}
+#aside_page #close {
+  position: absolute ;
+  top: 0;
+  left: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: #01FFFF;
 }

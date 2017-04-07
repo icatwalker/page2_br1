@@ -37,12 +37,12 @@ function pullupRefresh() {
 if (mui.os.plus) {
     mui.plusReady(function() {
         setTimeout(function() {
-            mui('#pullrefresh').pullRefresh().pullupLoading();
+            //mui('#pullrefresh').pullRefresh().pullupLoading();
         }, 1000);
     });
 } else {
     mui.ready(function() {
-        mui('#pullrefresh').pullRefresh().pullupLoading();
+        //mui('#pullrefresh').pullRefresh().pullupLoading();
     });
 }
 
@@ -221,8 +221,7 @@ function getinfo(url)
                             </tbody>
                         </table>
                     </div>
-                </li>
-`;
+                </li>`;
             }
             $("#tbody-result").html(str);
             /**for (var j = 0; j < result.length ; j++) {
@@ -295,19 +294,27 @@ $("#chaxun").click(function() {
 });
 
 
+
+
 //事假代理 按钮
 $("#tbody-result").click("button.btn1",function(event){
     var target=event.target;
     console.log(target.className);
     if(target.className.indexOf("btn1")!=-1){
        testW("btn1");
+        mui('.mui-off-canvas-wrap').offCanvas('show');
 
     }
-
 })
-;$("#tbody-result").click("button.btn2",function(event){
+;
+$("#tbody-result").click("button.btn2",function(event){
     var target=event.target;
     if(target.className.indexOf("btn2")!=-1){
         testW("btn2");
     }
 });
+
+//mui('.mui-off-canvas-wrap').offCanvas('show');
+//document.getElementById("close").onclick=function(){
+//    mui('.mui-off-canvas-wrap').offCanvas('close');
+//};
